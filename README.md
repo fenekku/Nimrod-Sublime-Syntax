@@ -1,7 +1,7 @@
-Nimrod Syntax Highlighting for Sublime Text
-===========================================
+Sublime Text Nimrod Syntax Highlighting 
+=======================================
 
-(Nimrod)[http://nimrod-code.org/index.html] syntax highlighting for (Sublime Text 2/3)[http://www.sublimetext.com/].
+[Nimrod](http://nimrod-code.org/index.html) syntax highlighting for [Sublime Text 2/3](http://www.sublimetext.com/).
 
 [Insert a picture here]
 
