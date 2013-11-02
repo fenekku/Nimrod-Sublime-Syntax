@@ -1,17 +1,29 @@
-Sublime Text Nimrod Syntax Highlighting 
+Sublime Text Nimrod Syntax Highlighting
 =======================================
 
-[Nimrod](http://nimrod-code.org/index.html) syntax highlighting for [Sublime Text 2/3](http://www.sublimetext.com/).
+[Nimrod](http://nimrod-code.org/index.html) syntax highlighting for [Sublime Text 2 and 3](http://www.sublimetext.com/).
 
-[Insert a picture here]
+What it looks like
+------------------
+
+![Nimrod Syntax Highlighting in Sublime Text](https://raw.github.com/fenekku/Nimrod-Sublime-Syntax/master/NimrodSyntaxHighlights.png)
+
+For more open up the syntaxTest.nim file.
 
 Installation
 ------------
 
-I am getting there...
+Until the Package Control package is up, do the following:
 
+    * Ctrl+Shift+P (Bring up the command palette)
+    * Add Repository: https//github.com/fenekku/Nimrod-Sublime-Syntax
+
+    * Ctrl+Shift+P (Bring up the command palette)
+    * Install Repository: Nimrod-Sublime-Syntax
+
+This will soon change though.
 
 Contributing
 ------------
 
-This is super beta stage. Don't hesitate to contribute and fix errors! 
+This is super early alpha stage. Don't hesitate to contribute and fix mistakes!

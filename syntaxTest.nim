@@ -32,10 +32,10 @@ var c : seq[int]
 var d : tuple[hello : string, world : int]
 var e : bool = true
 var f : bool = false
-var g : char = false
-var h : cint = false
+var g : char = 'd'
+var h : cint = 10
 var i : cstring = 'Good riddance Mr. Charles \n' & 'Good day Mrs. Shultz'
-var j : float = false
+var j : float = 54.34543
 
 var
   k : int = 0o1'i8
@@ -44,9 +44,9 @@ var
 
 
 const
-    GLFW_VERSION_MAJOR* = 3'i8
-    GLFW_VERSION_MINOR* = 0'i8
-    GLFW_VERSION_REVISION* = 1'i8
+  GLFW_VERSION_MAJOR* = 3'i8
+  GLFW_VERSION_MINOR* = 0'i8
+  GLFW_VERSION_REVISION* = 1'i8
 
 
 type
