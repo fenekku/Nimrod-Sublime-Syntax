@@ -24,6 +24,8 @@ iterator loop*[T](node : PCycleNode[T], times : int = 1): T {.inline.} =
 
 converter toBool*(a: Bool32): bool = bool(a)
 
+macro parseOptions*(body: stmt): stmt {.immediate.}=
+  body.expectKind nnkStmtList
 
 var a : string = "Hello World!" & " I am here."
 var aa : string = "Hello\n Wo\r\cld!\l\f" & "\t\v \\ \"I\'\4h \am\b h\ere\x FF."

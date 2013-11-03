@@ -191,6 +191,12 @@
         </dict>
         <dict>
             <key>match</key>
+            <string>\b(macro)\b</string>
+            <key>name</key>
+            <string>storage.type.macro.nimrod</string>
+        </dict>
+        <dict>
+            <key>match</key>
             <string>\b(method)\b</string>
             <key>name</key>
             <string>storage.type.method.nimrod</string>
