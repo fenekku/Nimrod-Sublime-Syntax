@@ -21,7 +21,7 @@ Until the Package Control package is up, do the following:
     * Ctrl+Shift+P (Bring up the command palette)
     * Install Repository: Nimrod-Sublime-Syntax
 
-This will soon change though.
+This will eventually change though.
 
 Contributing
 ------------

@@ -138,7 +138,7 @@
         </dict>
         <dict>
             <key>match</key>
-            <string>(\b(and|or|not|xor|shl|shr|div|mod|in|notin|is|isnot|of)\b|(=|\+|-|\*|/|&lt;|&gt;|@|\$|~|&amp;|%|!|\?|\^|\.\.|\.|:|\\)+)</string>
+            <string>(\b(and|or|not|xor|shl|shr|div|mod|in|notin|is|isnot|of|bind)\b|(=|\+|-|\*|/|&lt;|&gt;|@|\$|~|&amp;|%|!|\?|\^|\.\.|\.|:|\\)+)</string>
             <key>name</key>
             <string>keyword.operator.nimrod</string>
         </dict>

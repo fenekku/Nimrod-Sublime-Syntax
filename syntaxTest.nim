@@ -84,7 +84,6 @@ if window == nil:
 
 h = 0.0
 
-
 if 1 in 0..4:
   echo "here"
 
@@ -95,7 +94,6 @@ let
   a = @[1, 2, 3, 4]
   b = map(a, proc(x: int): string = $x)
 assert b == @["1", "2", "3", "4"]
-
 
 method selectup*(screen : PScreen) =
   echo("Pressed Up Arrow")
@@ -115,3 +113,7 @@ except:
   var e = getCurrentException()
   var msg = getCurrentExceptionMsg()
   debug_log "Terminated by signal " & $msg
+
+var inTemplateModule = true
+template b(a : expr): stmt =
+  bind inTemplateModule
