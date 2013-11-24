@@ -58,7 +58,7 @@
             <key>comment</key>
             <string>keywords that delimit flow blocks or alter flow from within a block</string>
             <key>match</key>
-            <string>\b(elif|else|for|if|try|while|when|break|continue|raise|return|yield|case|except)\b</string>
+            <string>\b(elif|else|for|if|try|while|when|break|continue|raise|return|yield|case|except|block)\b</string>
             <key>name</key>
             <string>keyword.control.flow.nimrod</string>
         </dict>

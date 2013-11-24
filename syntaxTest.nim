@@ -117,3 +117,6 @@ except:
 var inTemplateModule = true
 template b(a : expr): stmt =
   bind inTemplateModule
+
+block:
+  echo "I am in a block"
