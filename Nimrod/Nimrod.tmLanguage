@@ -18,42 +18,49 @@
             <key>name</key>
             <string>comment.line.number-sign.nimrod</string>
         </dict>
+
         <dict>
             <key>match</key>
-            <string>\b(0x\h+('(i|u)(4|8|16|32|64))?)\b</string>
+            <string>\b(0x\h+('(u|U|i|I)(4|8|16|32|64))?)\b</string>
             <key>name</key>
             <string>constant.numeric.integer.hexadecimal.nimrod</string>
         </dict>
+
         <dict>
             <key>match</key>
-            <string>\b(0o\h+('(i|u)(4|8|16|32|64))?)\b</string>
+            <string>\b(0o\h+('(u|U|i|I)(4|8|16|32|64))?)\b</string>
             <key>name</key>
             <string>constant.numeric.integer.octal.nimrod</string>
         </dict>
+
         <dict>
             <key>match</key>
             <string>\b(([1-9]+[0-9]*\.(?=[^.])[0-9]*)|(0\.(?=[^.])[0-9]*))</string>
             <key>name</key>
             <string>constant.numeric.float.nimrod</string>
         </dict>
+
         <dict>
             <key>match</key>
             <string>\b([1-9]+[0-9]*|0)('(u|U|i|I)(8|16|32|64)?)?\b</string>
             <key>name</key>
             <string>constant.numeric.integer.decimal.nimrod</string>
         </dict>
+
         <dict>
             <key>match</key>
             <string>\b(int|int8|int16|int32|int64|uint|uint8|uint16|uint32|uint64|float|float32|float64|bool|char|string|cstring|pointer|range|array|openarray|varargs|seq|set|tuple|cchar|cshar|cshort|cint|csize|clong|clonglong|cfloat|cdouble|clongdouble|cuchar|cushort|cuint|culong|culonglong)\b</string>
             <key>name</key>
             <string>support.type.nimrod</string>
         </dict>
+
         <dict>
             <key>match</key>
             <string>\b(var|enum|const|type|object|ref|ptr)\b</string>
             <key>name</key>
             <string>storage.modifier.nimrod</string>
         </dict>
+
         <dict>
             <key>comment</key>
             <string>keywords that delimit flow blocks or alter flow from within a block</string>
@@ -62,6 +69,68 @@
             <key>name</key>
             <string>keyword.control.flow.nimrod</string>
         </dict>
+
+        <dict>
+            <key>name</key>
+            <string>string.quoted.triple.nimrod</string>
+            <key>begin</key>
+            <string>(r?)(""")</string>
+            <key>beginCaptures</key>
+            <dict>
+                <key>1</key>
+                <dict>
+                    <key>name</key>
+                    <string>storage.type.string.nimrod</string>
+                </dict>
+                <key>2</key>
+                <dict>
+                    <key>name</key>
+                    <string>punctuation.definition.string.begin.nimrod</string>
+                </dict>
+            </dict>
+            <key>end</key>
+            <string>"""</string>
+            <key>endCaptures</key>
+            <dict>
+                <key>0</key>
+                <dict>
+                    <key>name</key>
+                    <string>punctuation.definition.string.end.nimrod</string>
+                </dict>
+            </dict>
+        </dict>
+
+        <dict>
+            <key>name</key>
+            <string>string.quoted.double.nimrod</string>
+            <key>begin</key>
+            <string>(r)"</string>
+            <key>beginCaptures</key>
+            <dict>
+                <key>1</key>
+                <dict>
+                    <key>name</key>
+                    <string>storage.type.string.nimrod</string>
+                </dict>
+
+                <key>2</key>
+                <dict>
+                    <key>name</key>
+                    <string>punctuation.definition.string.begin.nimrod</string>
+                </dict>
+            </dict>
+            <key>end</key>
+            <string>"</string>
+            <key>endCaptures</key>
+            <dict>
+                <key>0</key>
+                <dict>
+                    <key>name</key>
+                    <string>punctuation.definition.string.end.nimrod</string>
+                </dict>
+            </dict>
+        </dict>
+
         <dict>
             <key>name</key>
             <string>string.quoted.double.nimrod</string>
@@ -69,7 +138,13 @@
             <string>"</string>
             <key>beginCaptures</key>
             <dict>
-                <key>0</key>
+                <key>1</key>
+                <dict>
+                    <key>name</key>
+                    <string>storage.type.string.nimrod</string>
+                </dict>
+
+                <key>2</key>
                 <dict>
                     <key>name</key>
                     <string>punctuation.definition.string.begin.nimrod</string>
@@ -93,55 +168,61 @@
                 </dict>
             </array>
         </dict>
+
         <dict>
-            <key>name</key>
-            <string>string.quoted.single.nimrod</string>
-            <key>begin</key>
-            <string>'</string>
-            <key>beginCaptures</key>
+            <key>match</key>
+            <string>(')(([a-zA-Z0-9\\])|(\\r|\\c|\\l|\\f|\\t|\\v|\\"|\\'|\\a|\\b|\\e|\\x[0-9a-fA-F][0-9a-fA-F])|(.{2,}))(')</string>
+            <key>captures</key>
             <dict>
-                <key>0</key>
+                <key>1</key>
                 <dict>
                     <key>name</key>
-                    <string>punctuation.definition.string.begin.nimrod</string>
+                    <string>string.quoted.single.nimrod</string>
                 </dict>
-            </dict>
-            <key>end</key>
-            <string>'</string>
-            <key>endCaptures</key>
-            <dict>
-                <key>0</key>
+                <key>3</key>
                 <dict>
                     <key>name</key>
-                    <string>punctuation.definition.string.end.nimrod</string>
+                    <string>string.quoted.single.nimrod</string>
+                </dict>
+                <key>4</key>
+                <dict>
+                    <key>name</key>
+                    <string>constant.character.escape.nimrod</string>
+                </dict>
+                <key>5</key>
+                <dict>
+                    <key>name</key>
+                    <string>invalid.illegal.character.nimrod</string>
+                </dict>
+                <key>6</key>
+                <dict>
+                    <key>name</key>
+                    <string>string.quoted.single.nimrod</string>
                 </dict>
             </dict>
-            <key>patterns</key>
-            <array>
-                <dict>
-                    <key>include</key>
-                    <string>#escaped_char</string>
-                </dict>
-            </array>
         </dict>
+
         <dict>
             <key>name</key>
             <string>keyword.operator.comparison.nimrod</string>
             <key>match</key>
             <string>&lt;\=|&gt;\=|\=\=|&lt;|&gt;|\!\=|\=~</string>
         </dict>
+
         <dict>
             <key>match</key>
             <string>\=</string>
             <key>name</key>
             <string>keyword.operator.assignment.nimrod</string>
         </dict>
+
         <dict>
             <key>match</key>
             <string>(\b(and|or|not|xor|shl|shr|div|mod|in|notin|is|isnot|of|bind)\b|(=|\+|-|\*|/|&lt;|&gt;|@|\$|~|&amp;|%|!|\?|\^|\.\.|\.|:|\\)+)</string>
             <key>name</key>
             <string>keyword.operator.nimrod</string>
         </dict>
+
         <dict>
             <key>captures</key>
             <dict>
@@ -159,54 +240,63 @@
             <key>match</key>
             <string>\b(?:(import)|(from))\b</string>
         </dict>
+
         <dict>
             <key>match</key>
             <string>\b(addr|assert|mod|repr|map|defined|definedInScope|compiles|low|high|sizeOf|is|of|echo|shallowCopy|getAst|let|cast|quit)\b</string>
             <key>name</key>
             <string>support.function.builtin.nimrod</string>
         </dict>
+
         <dict>
             <key>match</key>
             <string>\b(proc)\b</string>
             <key>name</key>
             <string>storage.type.function.nimrod</string>
         </dict>
+
         <dict>
             <key>match</key>
             <string>\b(iterator)\b</string>
             <key>name</key>
             <string>storage.type.iterator.nimrod</string>
         </dict>
+
         <dict>
             <key>match</key>
             <string>\b(converter)\b</string>
             <key>name</key>
             <string>storage.type.function.nimrod</string>
         </dict>
+
         <dict>
             <key>match</key>
             <string>\b(template)\b</string>
             <key>name</key>
             <string>storage.type.template.nimrod</string>
         </dict>
+
         <dict>
             <key>match</key>
             <string>\b(macro)\b</string>
             <key>name</key>
             <string>storage.type.macro.nimrod</string>
         </dict>
+
         <dict>
             <key>match</key>
             <string>\b(method)\b</string>
             <key>name</key>
             <string>storage.type.method.nimrod</string>
         </dict>
+
         <dict>
             <key>name</key>
             <string>constant.language.nimrod</string>
             <key>match</key>
             <string>\b(nil|true|false)\b</string>
         </dict>
+
         <dict>
             <key>name</key>
             <string>invalid.illegal.name.nimrod</string>
@@ -214,6 +304,7 @@
             <string>\b(addr|and|as|asm|atomic|assert|bind|block|break|case|cast|const|continue|converter|discard|distinct|div|do|elif|else|end|enum|except|export|finally|for|from|generic|if|import|in|include|interface|is|isnot|iterator|lambda|let|macro|method|mixin|mod|nil|not|notin|object|of|or|out|proc|ptr|raise|ref|return|shared|shl|shr|static|template|try|tuple|type|var|when|while|with|without|xor|yield)\b</string>
         </dict>
     </array>
+
     <key>repository</key>
     <dict>
         <key>escaped_char</key>
